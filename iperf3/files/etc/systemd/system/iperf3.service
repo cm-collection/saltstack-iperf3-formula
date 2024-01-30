@@ -3,7 +3,7 @@ Description=IPerf3 Server
 After=syslog.target network.target
 
 [Service]
-ExecStart=/usr/bin/iperf3 --server --interval 10 --json
+ExecStart=/usr/bin/iperf3 --server --interval 10
 LimitNOFILE=8192
 Restart=always
 RestartSec=5s
