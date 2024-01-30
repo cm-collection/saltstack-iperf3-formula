@@ -1,0 +1,21 @@
+[Unit]
+Description=IPerf3 Server
+After=syslog.target network.target
+
+[Service]
+ExecStart=/usr/bin/iperf3 --server --interval 10 --json
+LimitNOFILE=8192
+Restart=always
+RestartSec=5s
+
+User=iperf3
+Group=iperf3
+
+CPUAccounting=yes
+MemoryAccounting=yes
+TasksAccounting=yes
+IOAccounting=yes
+IPAccounting=yes
+
+[Install]
+WantedBy=multi-user.target
